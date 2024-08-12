@@ -1,68 +1,93 @@
-let cart = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
-function addToCart(productId) {
-    fetch('data/products.json')
-        .then(response => response.json())
-        .then(products => {
-            const product = products.find(p => p.id == productId);
-            cart.push(product);
-            renderCart();
+function addProductToCart(product) {
+    const existingProduct = carrito.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        existingProduct.cantidad += 1;
+    } else {
+        carrito.push({
+            ...product,
+            cantidad: 1
         });
+    }
+
+    saveCart();
+    updateCartDisplay();
 }
 
-function renderCart() {
+function saveCart() {
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function updateCartDisplay() {
     const cartItemsDiv = document.getElementById('cart-items');
-    const totalDiv = document.getElementById('total');
+    const cartTotalSpan = document.getElementById('cart-total');
     cartItemsDiv.innerHTML = '';
+
     let total = 0;
 
-    cart.forEach(product => {
-        const itemDiv = document.createElement('div');
-        itemDiv.className = 'list-group-item d-flex justify-content-between align-items-center';
-        itemDiv.innerHTML = `
-            <div>
-                <h6>${product.name}</h6>
-                <p>$${product.price}</p>
-            </div>
-            <button class="btn btn-danger btn-sm remove-from-cart" data-id="${product.id}">Eliminar</button>
+    carrito.forEach(item => {
+        const itemTotal = parseFloat(item.precio.replace('$', '')) * item.cantidad;
+        total += itemTotal;
+
+        const cartItemDiv = document.createElement('div');
+        cartItemDiv.className = 'cart-item';
+
+        cartItemDiv.innerHTML = `
+            <span>${item.nombre} (x${item.cantidad}) - ${item.precio}</span>
+            <span>$${itemTotal.toFixed(2)}</span>
+            <button onclick="removeFromCart(${item.id})">Eliminar</button>
         `;
-        cartItemsDiv.appendChild(itemDiv);
-        total += product.price;
+
+        cartItemsDiv.appendChild(cartItemDiv);
     });
 
-    totalDiv.innerHTML = `<h4>Total: $${total}</h4>`;
-
-    document.querySelectorAll('.remove-from-cart').forEach(button => {
-        button.addEventListener('click', (e) => {
-            const productId = e.target.dataset.id;
-            removeFromCart(productId);
-        });
-    });
+    cartTotalSpan.innerText = `$${total.toFixed(2)}`;
 }
 
 function removeFromCart(productId) {
-    cart = cart.filter(product => product.id != productId);
-    renderCart();
+    const productIndex = carrito.findIndex(item => item.id === productId);
+
+    if (productIndex !== -1) {
+        const product = carrito[productIndex];
+
+        if (product.cantidad > 1) {
+            product.cantidad -= 1;
+        } else {
+            carrito.splice(productIndex, 1);
+        }
+    }
+
+    saveCart();
+    updateCartDisplay();
 }
 
-document.getElementById('checkout-btn').addEventListener('click', () => {
-    const checkoutFormContainer = document.getElementById('checkout-form-container');
-    checkoutFormContainer.style.display = 'block';
-
-    const checkoutForm = document.getElementById('checkout-form');
-    checkoutForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (checkoutForm.checkValidity()) {
-            alert('Formulario enviado correctamente');
-            // Procesar el pedido aquí
-        } else {
-            alert('Por favor, completa todos los campos correctamente.');
-        }
-    });
+document.getElementById('checkout-button').addEventListener('click', function() {
+    document.getElementById('checkout-form-container').style.display = 'block';
 });
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('add-to-cart')) {
-        addToCart(e.target.dataset.id);
-    }
+document.getElementById('checkout-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const dni = document.getElementById('dni').value;
+    const email = document.getElementById('email').value;
+    const celular = document.getElementById('celular').value;
+    const tarjeta = document.getElementById('tarjeta').value;
+
+    // Simulamos el proceso de compra
+    alert(`Compra confirmada para ${nombre}. Gracias por su compra!`);
+
+    // Limpia el carrito y localStorage
+    carrito = [];
+    saveCart();
+    updateCartDisplay();
+
+    // Cierra el formulario
+    document.getElementById('checkout-form-container').style.display = 'none';
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    updateCartDisplay();
 });

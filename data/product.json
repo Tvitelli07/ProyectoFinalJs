@@ -1,131 +1,86 @@
 [
     {
         "id": 1,
-        "nombre": "Buzo Nike",
-        "precio": 15000,
-        "cantidad": 0,
-        "color": "Negro",
-        "image": "../assets/images/Buzo-Adidas.jpg"
+        "nombre": "Buzo Adidas",
+        "precio": "$10000",
+        "imagen": "assets/images/Buzo-Adidas.jpg"
     },
     {
         "id": 2,
-        "nombre": "Buzo Adidas",
-        
-        "precio": 17000,
-        "cantidad": 0, 
-        "color": "Gris",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Buzo Nike",
+        "precio": "$15000",
+        "imagen": "assets/images/Buzo-Nike.jpg"
     },
     {
         "id": 3,
         "nombre": "Buzo Topper",
-        "precio": 10000,
-        "cantidad": 0, 
-        "color": "Blanco",
-        "image": "assets/images/Buzo-Adidas.jpg"
+        "precio": "$12500",
+        "imagen": "assets/images/Buzo-Adidas.jpg"
     },
     {
         "id": 4,
-        "nombre": "Pantalon Nike",
-        "precio": 10000,
-        "cantidad": 0, 
-        "color": "Negro",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Mochila Adidas",
+        "precio": "$5000",
+        "imagen": "assets/images/Mochila-Adidas.webp"
     },
     {
         "id": 5,
-        "nombre": "Pantalon Adidas",
-        "precio": 8000,
-        "cantidad": 0, 
-        "color": "Gris",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Mochila Puma",
+        "precio": "$4000",
+        "imagen": "assets/images/Mochila-Puma.jpg"
     },
     {
         "id": 6,
-        "nombre": "Pantalon Reebok",
-        "precio": 9000,
-        "cantidad": 0, 
-        "color": "Blanco",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Pantalon Adidas",
+        "precio": "$7000",
+        "imagen": "assets/images/Pantalon-Adidas.jpeg"
     },
     {
         "id": 7,
-        "nombre": "Remera Adidas",
-        "precio": 5000,
-        "cantidad": 0, 
-        "color": "Blanco",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Pantalon-Nike.webp",
+        "precio": "$8000",
+        "imagen": "assets/images/Pantalon-Nike.webp"
     },
     {
         "id": 8,
-        "nombre": "Remera Nike",
-        "precio": 6000,
-        "cantidad": 0, 
-        "color": "Negro",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Pantalon Reebok",
+        "precio": "$9000",
+        "imagen": "assets/images/Pantalon-Reebok.webp"
     },
     {
         "id": 9,
-        "nombre": "Remera Fila",
-        "precio": 7000,
-        "cantidad": 0, 
-        "color": "Gris",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Remera Adidas",
+        "precio": "$1000",
+        "imagen": "assets/images/Remera-Adidas.webp"
     },
     {
         "id": 10,
-        "nombre": "Zapatillas",
-        "precio": 30000,
-        "cantidad": 0
+        "nombre": "Remera Fila",
+        "precio": "$2000",
+        "imagen": "assets/images/Remera-Fila.jpg"
     },
     {
         "id": 11,
-        "nombre": "Zapatillas",
-        "precio": 28000,
-        "cantidad": 0
+        "nombre": "Remera Nike",
+        "precio": "$3000",
+        "imagen": "assets/images/Remera-Nike.webp"
     },
     {
         "id": 12,
-        "nombre": "Zapatillas",
-        "precio": 22000,
-        "cantidad": 0
+        "nombre": "Zapatillas Nike",
+        "precio": "$20000",
+        "imagen": "assets/images/Zapatillas-Nike.png"
     },
     {
         "id": 13,
-        "nombre": "Zapatillas",
-        "precio": 25000,
-        "cantidad": 0
+        "nombre": "Zapatillas Reebok",
+        "precio": "$190000",
+        "imagen": "assets/images/Zapatillas-Reebok.webp"
     },
     {
         "id": 14,
-        "nombre": "Gorra Nike",
-        "precio": 5000,
-        "cantidad": 0, 
-        "color": "Negro",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
-    },
-    {
-        "id": 15,
-        "nombre": "Gorra Adidas",
-        "precio": 5500,
-        "cantidad": 0, 
-        "color": "Blanco",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
-    },
-    {
-        "id": 16,
-        "nombre": "Mochila Puma",
-        "precio": 7000,
-        "cantidad": 0, 
-        "color": "Rojo",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
-    },
-    {
-        "id": 17,
-        "nombre": "Mochila Adidas",
-        "precio": 7500,
-        "cantidad": 0, 
-        "color": "Azul",
-        "image": "assets/imagenes/Buzo-Adidas.jpg"
+        "nombre": "Zapatillas Salomon",
+        "precio": "$18000",
+        "imagen": "assets/images/Zapatillas-Salomon.webp"
     }
 ]
